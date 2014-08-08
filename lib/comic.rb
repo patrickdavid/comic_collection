@@ -7,5 +7,9 @@ class Comic
     @isssue_num = property[issue_num].to_i
     @worth = property[worth]
   end
+  
+  def edit_worth(new_worth)
+    @worth = new_worth
+  end
 end
   
