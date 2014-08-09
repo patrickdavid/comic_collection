@@ -6,6 +6,10 @@ class Comic_collection
     @@all_comics
   end
   
+  def self.clear
+    @@all_comics = []
+  end
+  
   def initialize(publisher)
     @publisher = publisher
     @comics = []
@@ -34,4 +38,16 @@ class Comic_collection
       end
     end
   end
+  
+  def self.comics_asset
+    sum = 0
+    @@all_comics.each do |index|
+      puts index
+      index.comics.each do |publisher|
+        sum = sum + publisher.worth
+      end
+    end
+    sum
+  end
+  
 end
