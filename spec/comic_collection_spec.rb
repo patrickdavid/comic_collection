@@ -21,4 +21,15 @@ describe 'Comic_collection' do
     new_collection1.add_comic(new_comic)
     expect(new_collection1.comics).to eq [new_comic]
   end
+  
+  it 'allows you to remove a comic' do
+    new_collection1 = Comic_collection.new('Image')
+    new_collection1.save
+    new_comic = Comic.new({'title'=>'The Walking Dead', 'issue_num'=> 1,  'worth'=>999.99})
+    new_comic1 = Comic.new({'title'=>'Archie Dumps Veronica', 'issue_num'=> 123,  'worth'=>1.99})
+    new_collection1.add_comic(new_comic)
+    new_collection1.add_comic(new_comic1)
+    new_collection1.remove_comic(new_comic1)
+    expect(new_collection1.comics).to eq [new_comic]
+  end
 end

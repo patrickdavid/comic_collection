@@ -27,4 +27,11 @@ class Comic_collection
     @comics << comic
   end
   
+  def remove_comic(comic)
+    @comics.each do |issue|
+      if issue == comic
+        @comics.delete(comic)
+      end
+    end
+  end
 end
