@@ -53,7 +53,6 @@ def view_comics
       end
     end
   end
-  main_menu
 end
 
 def add_comic_book
@@ -77,8 +76,7 @@ def add_comic_book
         grade = gets.chomp
         new_comic = Comic.new({'title'=> title, 'issue_num'=> number,  'worth'=>value,  'cgi'=>grade})
         collection.add_comic(new_comic)
-      else
-        puts "You have no collections to store your comics in please re-enter one now."
+        puts "Comic added"
       end
     end
   end
@@ -93,6 +91,16 @@ def view_collection
     puts index.publisher
     end
   end
+end
+
+def show_me_the_money
+  sum = 0
+  @all_comics.each do |collection|
+    collection.comics.each do |issue|
+      sum = sum + issue.worth
+    end
+  end
+  puts "Your collection is worth: " + sum.to_s
 end
   
 main_menu
