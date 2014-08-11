@@ -4,7 +4,7 @@ class Comic
   
   def initialize(property)
     @title = property['title']
-    @isssue_num = property['issue_num'].to_i
+    @issue_num = property['issue_num'].to_i
     @worth = property['worth'].to_f
     @cgi = property['cgi'].to_f
   end
@@ -16,5 +16,4 @@ class Comic
   def edit_grade(condition)
     @cgi = condition
   end
-  
 end

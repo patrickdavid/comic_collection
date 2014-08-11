@@ -42,7 +42,6 @@ class Comic_collection
   def self.comics_asset
     sum = 0
     @@all_comics.each do |index|
-      puts index
       index.comics.each do |publisher|
         sum = sum + publisher.worth
       end
